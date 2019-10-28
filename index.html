@@ -26,6 +26,8 @@
     <body>
         <div class="reveal">
             <div class="slides">
+
+                <!-- START -->
                 <section>
                     <section data-markdown data-background-image="img/pojdte_pane.png">
                         <script type="text/template">
@@ -48,699 +50,538 @@
                         </script>
                     </section>
 
+                    <section data-markdown data-background-image="img/fakir.png">
+                        <script type="text/template">
+                            ## Pojďte si vyzkoušet , jak je golang jednoduchý. <!-- .element: class="opacity-bg fragment fade-in-then-semi-out" -->
+
+                            ## Aby jste mohli rychle a hned vyvijet aplikace. <!-- .element: class="opacity-bg fragment fade-up" -->
+
+                            Note:
+                            CIL & BENEFIT
+                        </script>
+                    </section>
+
+                    <section data-markdown data-background-image="img/pojdte_pane_fakir_obsah.png">
+                        <script type="text/template">
+                            # OBSAH <!-- .element: class="opacity-bg fragment fade-out" -->
+
+                            Note:
+                        </script>
+                    </section>
+
                     <section data-markdown>
                         <script type="text/template">
-                            ## Obsah
+                            ## Domácí příprava
 
+                            * instalace go 1.11+
+                            * `git pull github.com/jasei/golang_workshop`
+                            * [A Tour of Go](https://tour.golang.org)
+                            * [LinuxDays 2018 - Proč se (na)učit Golang](https://www.youtube.com/watch?v=nCezTNWceJ4)
+
+                            Note:
+                        </script>
+                    </section>
+
+                    <section data-markdown>
+                        <script type="text/template">
+                            ## Kontrakt
+
+                            Note:
+                                Obed, svacina, kdy si muzete doinstalovat veci...
+
+                                dopo budeme hlavne pracovat na CMD verzi a snad zacneme i pracovat na client-server
+
+                                po obede bychom meli zacit delat multiplayer
+                        </script>
+                    </section>
+
+                </section>
+
+                <!-- MOTIVACE -->
+                <section>
+                    <section data-markdown>
+                        <script type="text/template">
+                            # motivace
+
+
+                            * DevConf 2015 - [Hacking Jenkins workshop](https://www.slideshare.net/MiroCupak/hacking-jenkins)
+                            * Avast TechTalk 2018 - [Why to learn to Golang](https://slideslive.com/38905066/why-you-want-to-learn-golang)
+                            * LinuxDays 2018 - [Proč se (na)učit Golang](https://www.youtube.com/watch?v=nCezTNWceJ4)
+
+                            Note:
+                            Tenhle workshop chci uz delat delsi dobu...
+
+                            Pribeh o Jenkins workshopu na DevConfu...
+
+                            Workshop je hlavne o hrani si, proto delame hru...
+
+                        </script>
+                    </section>
+
+                </section>
+
+                <!-- KONTAKT & KONTEXT -->
+                <section>
+                    <section data-markdown data-background-image="img/kulecnik.png">
+                        <script type="text/template">
+                            # Hry <!-- .element: class="opacity-bg fragment fade-out" -->
+
+                            Note:
+                            Kontext
+
+                            Hrajete si radi?
+
+                            Kdyby jste si meli vybrat hru, jaka by jste byla? (Strategie/Strilecka/... - klidne konkretni)
+
+                            nebo
+
+                            Skupinky po 2, pobavte se, co jste naposledy kdy kdo hral? (PC ale klidne i stolni)
+
+                            ...
+
+                            A ta hra co budeme dneska psat je jednoducha a ma spojitost se znamym mobilnim telefonem
+
+                        </script>
+                    </section>
+
+                    <section data-markdown>
+                        <script type="text/template">
+                            ## nokia 5110
+                            ![nokia 5110](img/nokia/5110.jpeg)
+
+                            Note:
+                            Kontext
+                        </script>
+                    </section>
+
+                    <section data-markdown>
+                        <script type="text/template">
+                            ## nokia 3210
+                            ![nokia 3210](img/nokia/3210.jpeg)
+
+                            Note:
+                            Kontext
+                        </script>
+                    </section>
+
+                    <section data-markdown>
+                        <script type="text/template">
+                            ## nokia 3310
+                            ![nokia 3310](img/nokia/3310.jpeg)
+
+                            Note:
+                            Kontext
+                        </script>
+                    </section>
+
+                    <section data-markdown>
+                        <script type="text/template">
+                            ## nokia 6210
+                            ![nokia 6210](img/nokia/6210.jpeg)
+
+                            Note:
+                            Kontext
+                        </script>
+                    </section>
+
+                    <section data-markdown>
+                        <script type="text/template">
+                            ## nokia 7110
+                            ![nokia 7110](img/nokia/7110.jpeg)
+
+                            Note:
+                                Muj oblibeny, chtel jsem ho, matrix
+
+
+                        </script>
+                    </section>
+
+                    <section data-markdown data-background-image="img/nokia_snake.jpeg">
+                        <script type="text/template">
+                            # Co mají všichni společné? <!-- .element: class="opacity-bg fragment fade-in-then-semi-out" -->
+
+                            ## Hra HAD (snake) <!-- .element: class="opacity-bg fragment" -->
+
+                            Note:
+                        </script>
+                    </section>
+
+                    <section data-background-image="img/nokia_snake.jpeg">
+                    </section>
+
+                </section>
+
+                <!-- VYSVETLENI -->
+                <section>
+                    <section data-markdown data-background-image="img/pojdte_pane_fakir_intro.png">
+                        <script type="text/template">
+                            # Intro <!-- .element: class="fragment opacity-bg fade-out" -->
+
+                            Note:
+                        </script>
+                    </section>
+
+                    <section>
+                        <h2>Had (Snake) - historie</h2>
+
+                            <ul>
+                                <li class="fragment fade-left">
+                                    <span class="fragment fade-right">1976</span> -
+                                    <a href="https://www.arcade-museum.com/game_detail.php?game_id=7160) (arkada)">Blockade</a>
+                                </li>
+                                <li class="fragment fade-left">
+                                    <span class="fragment fade-right">1978</span> -
+                                    Worm (PC - TRS-80)
+                                </li>
+                                <li class="fragment fade-left">...</li>
+                                <li class="fragment fade-left">
+                                    <span class="fragment fade-right">1997</span> - 
+                                    <a href="https://en.wikipedia.org/wiki/Nokia_6110">Nokia 6110</a>
+                                </li>
+                                <li class="fragment fade-left">...</li>
+                            </ul>
+</li>
+                            <img tile="blocade" src="img/blockade.jpg" style="float:right" />
+
+                            <aside class="notes">                            
+                                vice o historii: https://en.wikipedia.org/wiki/Snake_(video_game_genre)
+                            </aside>
+                    </section>
+
+                    <section data-markdown>
+                        <script type="text/template">
+                            # Pravidla
+
+                            ![snake](img/nokia_snake.jpeg)
+
+                            Note:
+                        </script>
+                    </section>
+
+                    <section data-markdown>
+                        <script type="text/template">
+                            ## Posun
+
+                            Note:
+                            Debata jak posouvat telo
+
+                            Prace ve skupinkach (ja si zatim pripravuji flipchart)
+
+                            Flipchart
+                        </script>
+                    </section>
+
+                    <section data-markdown>
+                        <script type="text/template">
+                            ![snake](img/nokia_snake_2.jpeg)
+
+                            Note:
+                            Takze by pak nemel byt problem vykreslit jakoukoliv situaci
+                        </script>
+                    </section>
+
+                    <section data-markdown data-background-image="img/masinka.png">
+                        <script type="text/template">
+                            ## Herní smyčka <!-- .element: class="fragment opacity-bg fade-out" -->
+
+                            Note:
+                        </script>
+                    </section>
+
+                    <section data-markdown data-background-image="img/kotveni.png">
+                        <script type="text/template">
+                            ## Kotvení <!-- .element: class="fragment opacity-bg fade-out" -->
+
+                            Note:
+                            Co vam komu prijde zajimave?
+
+                            Neco noveho?
+
+                            Neco co by se dalo pouzit v nejakem vasem projektu?
+                        </script>
+                    </section>
+
+                </section>
+
+                <section>
+                    <section data-markdown data-background-image="img/pojdte_pane_fakir_cmd.png">
+                        <script type="text/template">
+                            # CMD aplikace <!-- .element: class="fragment opacity-bg fade-out" -->
+
+                            Note:
+                        </script>
+                    </section>
+
+                    <section data-markdown>
+                        <script type="text/template">
+                            ## co dneska vytvoříme?
+
+                            screenshot toho co udelame
+
+                            Note:
+                        </script>
+                    </section>
+
+
+                    <section data-markdown data-background-image="img/robot.png">
+                        <script type="text/template">
+                            # Testy <!-- .element: class="fragment opacity-bg fade-out" -->
+
+                            Note:
+                            Predtim nez se pustime do samotneho bouchani, projdeme si neco, co v Golang tour nebylo
+                        </script>
+                    </section>
+
+                    <section data-markdown>
+                        <script type="text/template">
+                            ## Testy
+
+                            ```go
+                            import (
+                                "testing"
+
+                                "github.com/stretchr/testify/assert"
+                            )
+
+                            func TestSnake(t *testing.T) {
+                                assert.Equal(t, 1, 1)
+                            }
+                            ```
+
+                            Note:
+                        </script>
+                    </section>
+
+                    <section data-markdown>
+                        <script type="text/template">
+                            ## Testy
+
+                            ```
+                            go test
+
+                            #případně konkretní test case
+
+                            go test -r TestSnake
+                            ```
+
+                            Note:
+                        </script>
+                    </section>
+
+                    <section data-markdown>
+                        <script type="text/template">
+                            ## Úkol 0 (společný)
+
+                            Projděme si kód
+
+                            Note:
+                        </script>
+                    </section>
+
+                    <section data-markdown>
+                        <script type="text/template">
+                            ## Úkol 1
+
+                            Zprovozněte testy
+
+                            <span id="ukol1">05:00</span>
+                            <button onClick="startTimer(60*5,document.querySelector('#ukol1'))">▶</button> 
+
+                            #### Rozšíření <!-- .element: class="fragment" data-fragment-index="1" -->
+                            
+                            napište test na ... <!-- .element: class="fragment" data-fragment-index="1" -->
+
+                            Note:
+                        </script>
+                    </section>
+
+                    <section data-markdown>
+                        <script type="text/template">
+                            ## Řešení 1
+
+                            ```
+                            ...
+                            rešení
+                            ...
+                            ```
+
+                            Note:
+                        </script>
+                    </section>
+
+                    <section data-markdown>
+                        <script type="text/template">
+                            ## Rozšíření 1
+
+                            ```
+                            ...
+                            rešení
+                            ...
+                            ```
+
+                            Note:
+                        </script>
+                    </section>
+
+                    <section data-markdown>
+                        <script type="text/template">
+                            ## Úkol X
+
+                            ...popis...
+
+                            <span id="ukol2">05:00</span>
+                            <button onClick="startTimer(60*5,document.querySelector('#ukol2'))">▶</button> 
+
+                            #### Rozšíření <!-- .element: class="fragment" data-fragment-index="1" -->
+                            
+                            ... <!-- .element: class="fragment" data-fragment-index="1" -->
+
+                            Note:
+                        </script>
+                    </section>
+
+                    <section data-markdown data-background-image="img/kotveni.png">
+                        <script type="text/template">
+                            ## Kotvení <!-- .element: class="fragment opacity-bg fade-out" -->
+
+                            Note:
+                            Co vam komu prijde zajimave?
+
+                            Neco noveho?
+
+                            Neco co by se dalo pouzit v nejakem vasem projektu?
+                        </script>
+                    </section>
+
+                </section>
+
+                <section>
+                    <section data-markdown data-background-image="img/pojdte_pane_fakir_klient.png">
+                        <script type="text/template">
+                            # Client - Server <!-- .element: class="fragment opacity-bg fade-out" -->
+                        </script>
+                    </section>
+
+                    <section data-markdown>
+                        <script type="text/template">
+                            ## Úkol X
+
+                            ...popis...
+
+                            <span id="ukol2">05:00</span>
+                            <button onClick="startTimer(60*5,document.querySelector('#ukol2'))">▶</button> 
+
+                            #### Rozšíření <!-- .element: class="fragment" data-fragment-index="1" -->
+                            
+                            ... <!-- .element: class="fragment" data-fragment-index="1" -->
+
+                            Note:
+                        </script>
+                    </section>
+
+                    <section data-markdown data-background-image="img/kotveni.png">
+                        <script type="text/template">
+                            ## Kotvení <!-- .element: class="fragment opacity-bg fade-out" -->
+
+                            Note:
+                            Co vam komu prijde zajimave?
+
+                            Neco noveho?
+
+                            Neco co by se dalo pouzit v nejakem vasem projektu?
+                        </script>
+                    </section>
+
+                </section>
+
+                <section>
+                    <section data-markdown data-background-image="img/pojdte_pane_fakir_multiplayer.png">
+                        <script type="text/template">
+                            # Multiplayer <!-- .element: class="fragment opacity-bg fade-out" -->
+                        </script>
+                    </section>
+
+                    <section data-markdown>
+                        <script type="text/template">
+                            ## Multiplayer
+
+                            ![snake multiplayer](img/snake_multiplayer.jpeg)
+
+                            Note:
+                            Prvni nokia s multiplayerem 6110
+                            
+                            Na obrazku Nokie 6210 a 8310
+
+                            Pojdme se vratit k nokii
+
+                            verze s IR - multiplayer
+                        </script>
+                    </section>
+
+                    <section data-markdown>
+                        <script type="text/template">
+                            ## Úkol X
+
+                            ...popis...
+
+                            <span id="ukol2">05:00</span>
+                            <button onClick="startTimer(60*5,document.querySelector('#ukol2'))">▶</button> 
+
+                            #### Rozšíření <!-- .element: class="fragment" data-fragment-index="1" -->
+                            
+                            ... <!-- .element: class="fragment" data-fragment-index="1" -->
+
+                            Note:
+                        </script>
+                    </section>
+
+                    <section data-markdown data-background-image="img/kotveni.png">
+                        <script type="text/template">
+                            ## Kotvení <!-- .element: class="fragment opacity-bg fade-out" -->
+
+                            Note:
+                            Co vam komu prijde zajimave?
+
+                            Neco noveho?
+
+                            Neco co by se dalo pouzit v nejakem vasem projektu?
+                        </script>
+                    </section>
+
+                </section>
+
+                <section>
+                     <section data-markdown data-background-image="img/pojdte_pane2.png">
+                        <script type="text/template">
+                            ## Hrajte si <!-- .element: class="fragment opacity-bg fade-out" -->
+
+                            Note:
+                            Dalsi tipy:
+                            * websockety - js client
+                            * dashboard
+                            * prochazeni skrz zdi
                             * ...
+                        </script>
+                    </section>
+                   
+
+                    <section data-markdown data-background-image="img/fakir.png">
+                        <script type="text/template">
+                            ## Pojďte si vyzkoušet , jak je golang jednoduchý. <!-- .element: class="opacity-bg fragment fade-in-then-semi-out" -->
+
+                            ## Aby jste mohli rychle a hned vyvijet aplikace. <!-- .element: class="opacity-bg fragment fade-up" -->
 
                             Note:
+                            znovu CIL & BENEFIT
                         </script>
                     </section>
 
-                    <section data-markdown>
+                    <section data-markdown data-background-image="img/rytir.png">
                         <script type="text/template">
-                            ## Pojďte si vyzkoušet , jak je golang jednoduchý.
+                            # Děkuji <!-- .element: class="opacity-bg fragment fade-in" -->
 
                             Note:
-                        </script>
-                    </section>
-
-                    <section data-markdown>
-                        <script type="text/template">
-                            ## aneb
-                            # použijte na daný problém vhodný tool
-
-                            Note:
-                            Obecny cil, ktery chci sdelit
-                        </script>
-                    </section>
-
-                    <section data-background-image="img/tool1.jpg">
-                    </section>
-
-                    <section data-markdown>
-                        <script type="text/template">
-                            # Storage
-
-
-                            Note:
-                        </script>
-                    </section>
-
-                    <section data-markdown>
-                        <script type="text/template">
-                            > Pokud nepotřebujete blokovou storage, použijte objektovou storage
-
-                            Note:
-                            Konkretni cil ktery chci sdelit
-                        </script>
-                    </section>
-                </section>
-
-                <section>
-                    <section data-markdown data-background-image="img/square-peg-round-hole.jpg">
-                        <script type="text/template">
-                            # Co vlastně dělá ThreatLab? <!-- .element: class="fragment opacity-bg" -->
-
-                            Note:
-                        </script>
-                    </section>
-
-                    <section data-markdown>
-                        <script type="text/template">
-                            ## Co vlastně dělá ThreatLab?
-
-                            ![simple ThreatLab chart](img/threatlab.png)
-
-                            Note:
-                        </script>
-                    </section>
-
-                    <section data-markdown>
-                        <script type="text/template">
-                            ## Co vlastně dělá ThreatLab?
-
-                            ![simple ThreatLab chart with input](img/threatlab2a.png)
-
-                            Note:
-                        </script>
-                    </section>
-
-                    <section data-markdown>
-                        <script type="text/template">
-                            ## Co vlastně dělá ThreatLab?
-
-                            ![simple ThreatLab chart with input and output](img/threatlab2.png)
-
-                            Note:
-                        </script>
-                    </section>
-
-                    <section data-markdown>
-                        <script type="text/template">
-                            ## Kolik toho máme
-
-                            - <div id="countOfObjects"></div>
-                            - 1.46PB
-
-
-                            Note:
-                            Toto a pocet souboru ktere nam prijdou je duvod, proc nemuzeme pouzit cloud providery jako AWSko - bylo by to moc drahe
-
-                            - 1,425,852,133 (4.10.2019 10:12)
-                        </script>
-                    </section>
-
-                    <section data-markdown>
-                        <script type="text/template">
-                            ## Technologie
-
-                            * Event oriented architektura
-                            * Microservice
-                            * Docker
-                            * On-premise cloud (kubernetes)
-                            * Scala/Python
-                            * ...
-
-                            Note:
-                            - Zajimalo by to nekoho podrobneji?
-                            - Mozne tema na dalsi talk...
-                        </script>
-                    </section>
-
-                </section>
-
-                <section>
-                    <section data-markdown data-background-image="img/drillpress.jpg">
-                        <script type="text/template">
-                            # Potřebujeme ukládat soubory <!-- .element: class="fragment opacity-bg" -->
-
-                            ## (hodně souboru) <!-- .element: class="fragment opacity-bg" -->
-                        </script>
-                    </section>
-
-                    <section data-markdown>
-                        <script type="text/template">
-                            ## Unikátní identifikator (ID)
-
-                            ### aneb proč jméno souboru nestačí
-                        </script>
-                    </section>
-
-                    <section>
-                        <h2>Unikátní identifikator (ID)</h2>
-
-                        <p>
-                        MD5 / SHA1 / <span class="fragment highlight-red">SHA256</span>
-                        </p>
-                    </section>
-
-                    <section data-markdown>
-                        <script type="text/template">
-                            ## Unikátní identifikator (ID)
-
-                            | |md5|sha1|sha256|
-                            |-|---|----|------|
-                            |délka|16B|20B|32B|
-                            |hex|32|40|64|
-                            |kolize|$$\frac{1}{2^{128}}$$|$$\frac{1}{2^{160}}$$|$$\frac{1}{2^{256}}$$|
-
-                            Note:
-                        </script>
-                    </section>
-
-                    <section data-background-image="img/universe.jpg">
-                        <div class="fragment opacity-bg">
-                            $$2^{256} = 1.157920892\cdot10^{77}$$
-
-                            vs.
-
-                            $$10^{78} - 10^{100}$$
-                        </div>
-
-                        <aside class="notes">
-                            Pocet atomu ve vesmiru
-                            $$10^{78} - 10^{100}$$ - http://fyzweb.cz/odpovedna/index.php?limit_od=10&hledat=nějaký
-                            $$10^{82}$$ - https://time-theory.info/vesmir-v-soucasne-perspektive/
-                            $$2.5\cdot10^{89}$$ - https://www.ptejteseknihovny.cz/dotazy/castice
-
-                        </aside>
-                    </section>
-
-                    <section data-background-image="img/postgres.png">
-                        <div class="fragment opacity-bg">
-                            <h2>metadata<br />=<br />PostgreSQL</h2>
-                        </div>
-                    </section>
-                </section>
-
-                <section>
-                    <section data-markdown data-background-image="img/x.jpg">
-                        <script type="text/template">
-                            # Kam ty soubory uložíme? <!-- .element: class="fragment opacity-bg" -->
-
-                            ## (a trochu historie k tomu) <!-- .element: class="fragment opacity-bg" -->
-                        </script>
-                    </section>
-
-                    <section data-markdown>
-                        <script type="text/template">
-                            ## Paleolit
-
-                            # ? - 2008
-                            ## (±200let) <!-- .element: class="fragment" -->
-
-                            Note:
-                            - Starsi doma kamenna
-                            - Uhlikova metoda
-                        </script>
-                    </section>
-
-                    <section data-markdown>
-                        <script type="text/template">
-                            ## Mezolit
-
-                            - 2009 - 2016 (±200let)
-                            - WIN server + diskove pole
-                            - SMB share
-                            - Kolem roku 2012 upgrade z 2x16TB na 2x30TB
-                            - Aplikační replikace
-
-                            Note:
-                                - stredni doba kamenna
-
-                                - max 4 diskove pole
-
-                                - Paleolit jenom jedna instance, touhle dobou uz 2 DC
-                        </script>
-                    </section>
-
-                    <section data-markdown>
-                        <script type="text/template">
-                            ## Počet souborů v adresáři
-
-                            Note:
-                        </script>
-                    </section>
-
-                    <section>
-                        <h2>Cesta</h2>
-
-                        <div>
-                            <span class="fragment highlight-red" data-fragment-index="1">e3</span><!--
-                         --><span class="fragment highlight-blue" data-fragment-index="2">b0</span><!--
-                         --><span class="fragment highlight-green" data-fragment-index="3">c4</span><!--
-                         -->4298fc1c14...a495991b7852b855
-                        </div>
-                        <div style="font-size:128px">
-                            ⇩
-                        </div>
-                        <div>
-                            //storage/share<!--
-                         -->/<span class="fragment highlight-red" data-fragment-index="1">e3</span><!--
-                         -->/<span class="fragment highlight-blue" data-fragment-index="2">b0</span><!--
-                         -->/<span class="fragment highlight-green" data-fragment-index="3">c4</span><!--
-                         -->/e3b0c44298...1b7852b855
-                        </div>
-
-                        <aside class="notes">
-                            e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
-                            
-                            1425852133 ÷16777216 = 85
-                        </aside>
-                    </section>
-
-                    <section>
-                        <h2>Cesta</h2>
-
-                        <div>
-                           /<span class="fragment highlight-red" data-fragment-index="1">00-ff</span>/<!--
-                         --><span class="fragment highlight-blue" data-fragment-index="2">00-ff</span>/<!--
-                         --><span class="fragment highlight-green" data-fragment-index="3">00-ff</span>/
-                        </div>
-                        <div style="font-size:128px">
-                            ⇩
-                        </div>
-                        <div>
-                            <span class="fragment highlight-red" data-fragment-index="1">256</span>x<!--
-                         --><span class="fragment highlight-blue" data-fragment-index="2">256</span>x<!--
-                         --><span class="fragment highlight-green" data-fragment-index="3">256</span>
-                         = 16,777,216
-                        </div>
-
-                        <aside class="notes">
-                            e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
-                        </aside>
-                    </section>
-
-                    <section data-markdown>
-                        <script type="text/template">
-                            ## Starověk
-
-                            - 2015 - 2018 (±200let)
-                            - SMB share
-                            - 16x6TB
-                            - Výkon
-                            - Map reduce idea
-                            - Aplikační replikace
-                            - GlusterFS/CEPH/Hastr - block storage experiment
-
-                            Note:
-                            Gluster byl vykonove asi 4x mene vykony (prumerne 400MB/s vs necelych 100MB/s)
-                        </script>
-                    </section>
-
-                    <section data-markdown>
-                        <script type="text/template">
-                            ## Rebalancing
-
-                            ![rebalancing](img/rebalance1.png)
-
-                            Note:
-                        </script>
-                    </section>
-
-                    <section data-markdown>
-                        <script type="text/template">
-                            ## Rebalancing - nový node
-
-                            ![rebalancing new nodes](img/rebalance2.png)
-                            
-                            Note:
-                            Pridanim nove storage se nejvic pouzivaji nove storage
-                        </script>
-                    </section>
-
-                    <section data-markdown>
-                        <script type="text/template">
-                            ## (Temný) Středověk
-
-                            - 10/2016 - 2018
-                            - Starověk + NAS
-                            - SMB share
-                            - Aplikační replikace
-                            - NAS pomalý (kB/s)
-
-                            Note:
-                        </script>
-                    </section>
-
-                </section>
-
-                <section>
-                    <section data-markdown data-background-image="img/brush.jpg">
-                        <script type="text/template">
-                            # Jak je budeme číst a zapisovat? <!-- .element: class="fragment opacity-bg" -->
-                        </script>
-                    </section>
-
-                    <section data-markdown>
-                        <script type="text/template">
-                            ## Path(sha256) + samba
-
-                            ![DB and samba](img/db_samba.png)
-
-                            Note:
-                        </script>
-                    </section>
-
-                    <section data-markdown>
-                        <script type="text/template">
-                            ## Path(sha256) + samba
-
-                            - <span class="plus">⊕</span> fungovalo to
-                            - <span class="minus">⊖</span> API + SMB (2 různé API)
-                            - <span class="minus">⊖</span> Škálovatelnost pouze v párech
-                            - <span class="minus">⊖</span> Rozložení nových a starých souboru
-                            - <span class="minus">⊖</span> Aplikační replikace
-                            
-                            Note:
-                        </script>
-                    </section>
-
-                    
-                    <section data-markdown>
-                        <script type="text/template">
-                            ## HashLookup.pm
-
-                            e3b0c44298fc1c14...a495991b7852b855
-
-                            ⇩
-
-                            `STORAGE`/share/e3/b0/c4/e3b0c44298...1b7852b855
-
-                            Note:
-                            - knihovna
-                            - aktualizace byl problem (nasazovani)
-                            - zapomenute nove nody 
-                        </script>
-                    </section>
-                    
-                    <section data-markdown data-background-image="img/samba_dancers.jpg">
-                        <script type="text/template">
-                            # Samba <!-- .element: class="fragment opacity-bg" -->
-                        </script>
-                    </section>
-                    
-                    <section data-markdown data-background-image="img/samba_ship.jpg">
-                        <script type="text/template">
-                            # Samba <!-- .element: class="fragment opacity-bg" -->
-                        </script>
-                    </section>
-                    
-                    <section data-markdown>
-                        <script type="text/template">
-                            # Samba / SMB / ~CIFS~
-                        </script>
-                    </section>
-                    
-                    <section data-markdown>
-                        <script type="text/template">
-                            ![docker](img/docker.png) 
-
-                            Note:
-                            - z lonskych let mozna vite, ze pouzivame docker
-                            - jak jsem zminil v sekci Technologie
-                        </script>
-                    </section>
-                    
-                    <section data-markdown>
-                        <script type="text/template">
-                            # Samba / SMB / ~CIFS~
-                    
-                            ![scream docker](img/wrong_docker.png)
-                        </script>
-                    </section>
-                    
-                    <section data-markdown>
-                        <script type="text/template">
-                            ## pySMB/jCIFS/libdsm/...
-                    
-                            # SMB in userspace
-                    
-                            ![docker](img/docker.png) 
-                        </script>
-                    </section>
-
-                    <section data-markdown>
-                        <script type="text/template">
-                            # NFS
-                    
-                            ![scream docker](img/wrong_docker.png)
-                        </script>
-                    </section>
-                    
-                    <section data-markdown>
-                        <script type="text/template">
-                            ## Stor
-                            
-                            ![stor](img/stor.png)
-                            
-                            Note:
-                            - HashLookup as Service
-                            - Objektova storage!
-                            - https://github.com/avast/stor
-                            - HTTP API
-                            - velmi nam to pomohlo pri prechodu na objektovou storage
-
-                        </script>
-                    </section>
-                </section>
-
-                <section>
-                    <section data-markdown data-background-image="img/tree.jpg">
-                        <script type="text/template">
-                            # A tak jsme vybrali HCP <!-- .element: class="fragment opacity-bg" -->
-
-                        </script>
-                    </section>
-                    
-                    <section data-markdown>
-                        <script type="text/template">
-                            ## Specifikace
-                            
-                            - `1.2GiB/s` čtení, `200MiB/s` zápis
-                            - HA (Praha - Brno)
-                            - Transparentní replikace
-                            - HTTP/REST/S3 API
-                            - 1TB/den	
-                            - ...
-                            
-                            Note:
-                        </script>
-                    </section>
-                    
-                    <section data-markdown>
-                        <script type="text/template">
-                            ## Analýza objektů
-                            
-                            ![histogram](img/histogram.png)
-                            
-                            Note:
-                            - nonpe & pe
-                            - soucast specifikace
-                            - akceptacni testy testovaly objekty se zastoupenim velikosti dle histogramu
-                        </script>
-                    </section>
-
-                    <section data-markdown>
-                        <script type="text/template">
-                            # Co je objekt?
-                            
-                            ![objekt storage vs block storage](img/object-storage.png)
-                    
-                            Note:
-                            - https://www.druva.com/blog/object-storage-versus-block-storage-understanding-technology-differences/
-                        </script>
-                    </section>
-                    
-                    <section data-markdown>
-                        <script type="text/template">
-                            # Objektová storage
-                            
-                            - <span class="plus">⊕</span> (HTTP) API (S3, Swift, REST,...)
-                            - <span class="plus">⊕</span> Škalovatelnost
-                            - <span class="plus">⊕</span> SDS (Software defined storage)
-                            - <span class="plus">⊕</span> Vysoká dostupnost
-                            - <span class="plus">⊕</span> Performance
-                            - <span class="plus">⊕</span> Ochrana dat (replikační faktor)
-                            - <span class="plus">⊕</span> Custom metadata
-                            
-                            Note:
-                            SDS = nezávislá na HW (většina)
-                        </script>
-                    </section>
-
-                    <section data-markdown>
-                        <script type="text/template">
-                            ## Objektová storage
-                            
-                            - <span class="minus">⊖</span> Update/append objektu
-                            - <span class="minus">⊖</span> Objekty nejsou dostupné operačnímu systému
-                            - <span class="minus">⊖</span> Není zaručena latence získání objektu
-                            - <span class="minus">⊖</span> Není vhodná pro transakční data
-                            
-                            Note:
-                            - immutabilni
-                            - latence - filesystem garantuje IOPS
-                            - nepodporuje locking and sharing mechanism
-                            - Pojem IOPS (input / output operations per second) nám vysvětluje, kolik čtecích a zápisových operací je disk schopen provést. Zjednodušeně nám tedy hodnota IOPS říká, jaký je vlastně výkon disku.
-                        </script>
-                    </section>
-                    
-                    <section data-markdown>
-                        <script type="text/template">
-                            ## Příklady objektových storage
-                            
-                            - [AWS S3](https://aws.amazon.com/s3/)
-                            - [MinIO](https://min.io)
-                            - [Ceph](https://ceph.io)
-                            - [Swift](https://github.com/openstack/swift)
-                            - [NetApp StorageGrid](https://www.netapp.com/us/products/data-management-software/object-storage-grid-sds.aspx)
-                            - [Hitachi Content Platform (HCP)](https://www.hitachivantara.com/en-us/products/storage/object-storage/content-platform.html)
-                            - [Dell EMC ECS Object Storage](https://www.dellemc.com/cs-cz/storage/ecs/index.htm)
-                            - ...
-                            
-                            Note:
-                            - GCS, Azure
-                        </script>
-                    </section>
-                    
-                </section>
-
-                <section>
-                    <section data-markdown data-background-image="img/pizza.jpg">
-                        <script type="text/template">
-                            # Na co si dát pozor <!-- .element: class="fragment opacity-bg" -->
-                        </script>
-                    </section>
-
-                    <section data-markdown>
-                        <script type="text/template">
-                            ## Na co si dát pozor                            
-
-                            - Load balancing
-                            - Erasure coding
-                            - Rebalancing
-                            - Replikace synchronní či asynchronní?
-                            
-                            Note:
-                        </script>
-                    </section>
-
-
-                    <section data-markdown>
-                        <script type="text/template">
-                            ## Load balancing
-                            
-                            - Load balancer
-                                - HA
-                                - Distribuovaný
-                                - Složitějsí (a dražší)
-                            - DNS balancer
-                                - Jednodušší
-                                - Problém s aliasy
-                                - Přepnutí je pomalé (TTL)
-                            
-                            Note:
-                        </script>
-                    </section>
-
-                    <section data-markdown>
-                        <script type="text/template">
-                            ## Erasure coding
-                            
-                            ![erasure coding](img/erasure_coding.png)
-                            Note:
-                            - technika nahrazujici raid vyuzivajici vice disku
-                            - v pripade vypadku jednoho disku... okmazite prepocitava
-                            - v pripade vypadku N disku dochazi k nedostupnosti dat
-                        </script>
-                    </section>
-
-                    <section data-markdown>
-                        <script type="text/template">
-                            ## Rebalancing
-                            
-                            Přidání nového nodu
-                            
-                            Note:
-                        </script>
-                    </section>
-
-                    <section data-markdown>
-                        <script type="text/template">
-                            ## Replikace synchronní či asynchronní?
-
-                            
-                            Note:
-                            - jak se chova synchronni replikace
-                            - jak asynchronni
-                            - HCP - metadata a data replikace
-                            - https://www.druva.com/blog/object-storage-versus-block-storage-understanding-technology-differences/
-                        </script>
-                    </section>
-
-                    <section data-markdown>
-                        <script type="text/template">
-                            ## CAP teorém
-                            
-                            > The primary issues are eventual consistency or strong consistency. Object storage systems are eventually consistent while block storage systems are strongly consistent.
-                            
-                            https://www.druva.com/blog/object-storage-versus-block-storage-understanding-technology-differences/ <!-- {.element: class="fragment" style="float:right"} -->
-                            
-                            Note:
-                            - https://www.slideshare.net/GrishaWeintraub/cap-28353551
-                            - https://sw-samuraj.cz/2017/04/cap-theorem/
-
-                            - Konzistence (Consistency) - systém vrátí při každém čtení poslední zápis.
-                            - Dostupnost (Availability) - systém vrátí pro každý požadavek odpověď, nicméně bez garance, že jde o poslední zápis.
-                            - Tolerance rozdělení (Partition Tolerance) - systém zpracovává informace navzdory tomu, že došlo k rozdělení sítě (network partition), způsobené chybou komunikace mezi sub-systémy.
-                        </script>
-                    </section>
-
-                </section>
-
-
-                <section>
-                    <section data-markdown data-background-image="img/doctor.jpg">
-                        <script type="text/template">
-                            # Tak takove to tedy bylo... <!-- .element: class="fragment opacity-bg" -->
-                            Note:
-                        </script>
-                    </section>
-
-                    <section data-markdown>
-                        <script type="text/template">
-                            # Moudro dne
-                    
-                             > Pokud nepotřebujete blokovou storage, použíjte objektovou storage
-                    
-                            Jan Seidl <!-- .element: class="fragment grow" style="float:right" -->
-                    
-                            Note:
-                        </script>
-                    </section>
-                    
-                    <section>
-                        <img src="img/cutter1.jpg" />
-                    </section>
-                    
-                    <section data-background-image="img/cutter2.jpg">
-                    </section>
-                    
-                    <section data-markdown>
-                        <script type="text/template">
-                            ## Viruslab storage
-                    
-                            Jan Seidl <seidl@avast.com>
-                            Viruslab Systems
-                    
-                            https://jasei.github.io/viruslab_storage_talk
-                            ![qr code](img/qrcode.png)
-                    
-                            Note:
+                            Muzete vyrazit do boje... nebo tak neco
                         </script>
                     </section>
 
@@ -758,29 +599,32 @@
             Reveal.initialize({
                 slideNumber: 'c/t',
                 hash: true,
+                transition: 'convex',
                 dependencies: [
                     { src: 'plugin/markdown/marked.js' },
                     { src: 'plugin/markdown/markdown.js' },
                     { src: 'plugin/notes/notes.js', async: true },
                     { src: 'plugin/highlight/highlight.js', async: true },
-                    { src: 'plugin/math/math.js', async: true }
+                    { src: 'plugin/math/math.js', async: true },
                 ]
             });
 
-            var startTime = new Date("Oct 4, 2019 10:13:00").getTime();
-            var startCount = 1425852133;
-            const incrementPerDay = 2000000;
-            const incrementPerMilisecond = incrementPerDay/(60*60*24*1000)
-//                            - 1,425,852,133
-//                            - 1.46PB
+            function startTimer(duration, display) {
+                var timer = duration, minutes, seconds;
+                setInterval(function () {
+                    minutes = parseInt(timer / 60, 10)
+                    seconds = parseInt(timer % 60, 10);
             
-            var x = setInterval(function() {
-                const now = new Date().getTime();
-                const distance = now - startTime;
-
-                document.getElementById("countOfObjects").innerHTML = (startCount + distance * incrementPerMilisecond).toLocaleString('en-US',{maximumFractionDigits:0});
-            }, 1000);
-
+                    minutes = minutes < 10 ? "0" + minutes : minutes;
+                    seconds = seconds < 10 ? "0" + seconds : seconds;
+            
+                    display.textContent = minutes + ":" + seconds;
+            
+                    if (--timer < 0) {
+                        timer = duration;
+                    }
+                }, 1000);
+            }
         </script>
     </body>
 </html>

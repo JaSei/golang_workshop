@@ -42,6 +42,8 @@
   },
   "license": "MIT",
   "dependencies": {
+    "highlight.js": "^9.15.10",
+    "reveal-code-focus": "^1.1.0",
     "reveal.js-tableofcontents": "^1.0.0"
   }
 }
